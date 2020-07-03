@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: v2tls
+spec:
+  selector:
+    matchLabels:
+      app: v2tls
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: v2tls
+    spec:
+      containers:
+        - name: v2tls
+          image: byxiaopeng/v2tls-docker
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 1m
+              memory: 8Mi
+            limits:
+              cpu: 200m
+              memory: 64Mi
+          ports:
+            - containerPort: 80
