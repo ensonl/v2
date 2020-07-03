@@ -1,5 +1,5 @@
 FROM alpine:latest
-LABEL maintainer="https://github.com/ensonlu/v2hero"
+LABEL maintainer="https://raw.githubusercontent.com/ensonlu/v2/HEROKU"
 
 #ENV VER=v4.20.0
 
