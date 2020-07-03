@@ -5,6 +5,7 @@
 用于在 Heroku 上部署 V2Ray Websocket。
 
 **Heroku 为我们提供了免费的容器服务，我们不应该滥用它，所以本项目不宜做为长期翻墙使用。**
+转自：https://ibcl.us/Heroku-V2Ray_20191014/
 
 
 ## 镜像
