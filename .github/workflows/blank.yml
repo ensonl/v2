@@ -1,1 +1,41 @@
-q
+name: kubesail-reboot
+on:
+  schedule:
+    - cron: 35 21 * * 4
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-20.04 
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install build dependencies
+      run: |
+        sudo apt-get -y update
+        sudo apt-get -y install wget
+        sudo apt-get -y install curl
+    - name: Clone source
+      run: |
+        cd /home/runner
+        curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.7.0/bin/linux/amd64/kubectl
+        #太高版本还不行  真坑
+        chmod +x ./kubectl
+        sudo mv ./kubectl /usr/bin/kubectl
+        mv /home/runner/work/kubesail-reboot/kubesail-reboot/ssv2.yml /home/runner/ssv2.yml
+        mv /home/runner/work/kubesail-reboot/kubesail-reboot/v2tls.yml /home/runner/v2tls.yml
+        mv /home/runner/work/kubesail-reboot/kubesail-reboot/icopy.yml /home/runner/icopy.yml
+    - name: go kaishi
+      run: |
+        mkdir /home/runner/.kube
+        #kubectl的配置文件
+        cat <<-EOF > /home/runner/.kube/config
+        ${{ secrets.CONFIG }}
+        EOF
+        #查看所有Pod列表
+        kubectl get pods
+        #要重新部署的yml
+        kubectl replace --force -f /home/runner/ssv2.yml
+        kubectl replace --force -f /home/runner/v2tls.yml
+        #kubectl replace --force -f /home/runner/icopy.yml        
+    - name: WeChat notification
+      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=重启kubesail容器成功        
