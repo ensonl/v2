@@ -5,7 +5,7 @@ Surge 4:
 http-response https://note.youdao.com/yws/(mapi/payment|api/self) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Alex0510/surge/master/Script/ydybj.js
 
 QuanX:       
-https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body ydybj.js
+https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body https://raw.githubusercontent.com/ensonlu/v2/J/scripts/noteyoudaovip.js
 
 hostname: note.youdao.com
 */
