@@ -1,7 +1,7 @@
 /*
 [rewrite_local]
 #西窗烛 （by黑黑酱）
-^https:\/\/avoscloud\.com\/1\.1\/users\/ url script-response-body xcz.js
+^https:\/\/avoscloud\.com\/1\.1\/users\/ url script-response-body https://raw.githubusercontent.com/ensonlu/v2/J/scripts/xcz.js
 
 [MITM]
 hostname:avoscloud.com
