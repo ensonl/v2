@@ -17,7 +17,7 @@
         },
         "CONFIG_JSON3": {
             "description": "拼接config.json,默认",
-            "value": "\",\"alterId\":64}]},\"streamSettings\":{\"network\":\"ws\",\"security\":\"none\",\"wsSettings\":{\"path\":\"/v2-Hero\",\"headers\":{}}}},\"inboundDetour\":[],\"outbound\":{\"protocol\":\"freedom\",\"settings\":{}}}"
+            "value": "\",\"alterId\":0}]},\"streamSettings\":{\"network\":\"ws\",\"security\":\"none\",\"wsSettings\":{\"path\":\"/v2-Hero\",\"headers\":{}}}},\"inboundDetour\":[],\"outbound\":{\"protocol\":\"freedom\",\"settings\":{}}}"
         }
      
   },
