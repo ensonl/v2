@@ -5,7 +5,7 @@
   "env": {
      "UUID": {
        "description": "VMess用户的主ID, uuidgenerator.net",
-       "value": "65f11be5-ac71-4f0c-874b-d93c610c66ef"
+       "value": "c874fe80-5177-443c-89a1-0c5dc176acc7"
      },
      "CONFIG_JSON1": {
             "description": "v2ray配置，默认即可",
